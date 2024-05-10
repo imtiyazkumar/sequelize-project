@@ -15,7 +15,16 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.get('/add', userController.addUser);
+app.post('/add', userController.addUser);
+
+app.get('/get/:id', userController.getUser);
+
+app.get('/get-all', userController.getUsers);
+
+app.delete('/delete/:id', userController.deleteUser);
+
+app.patch('/update/:id', userController.updateUser);
+
 
 
 app.listen(port, () => {
