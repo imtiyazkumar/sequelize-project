@@ -49,6 +49,15 @@ const updateUser = async (req, res) => {
     res.status(200).json({ data: data });
 }
 
+const upydateUser = async (req, res) => {
+    const data = await User.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    });
+    res.status(200).json({ data: data });
+}
+
 module.exports = {
     addUser,
     getUsers,
